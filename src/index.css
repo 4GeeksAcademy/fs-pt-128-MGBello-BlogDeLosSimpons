@@ -1,0 +1,25 @@
+* {
+    font-family: "Fredoka", sans-serif;
+}
+
+.characterContainer {
+    display: flex;
+    height: 600px;
+    flex-wrap: nowrap;
+    justify-content: start;
+    align-items: center;
+    margin: 0 auto;
+    overflow-y: hidden;
+    overflow-x: auto;
+    padding-left: 20px;
+    padding-right: 20px;
+    background: transparent;
+}
+
+@media (max-width: 768px) {
+    .characterContainer {
+        display: flex;
+        height: 400px;
+       
+    }
+}

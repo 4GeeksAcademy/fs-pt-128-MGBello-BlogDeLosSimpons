@@ -1,0 +1,96 @@
+.primaryCard {
+    flex-shrink: 0;
+    width: 300px;
+    height: 500px;
+    margin: 10px;
+    border: none;
+    background-color: #FFF;
+    transition: all 0.4s ease;
+    cursor: pointer;
+}
+
+@media (max-width: 768px) {
+    .primaryCard {
+        flex-shrink: 0;
+        width: 250px;
+        height: 350px;
+        margin: 10px;
+    }
+}
+
+.primaryCard:hover {
+    filter: drop-shadow(0px 4px 10px rgba(255, 217, 15, 0.4)) drop-shadow(0px 0px 25px rgba(255, 217, 15, 0.7));
+    border: none;
+    transform: translateY(-5px);
+}
+
+.primaryImage {
+    width: 250px;
+    height: 50%;
+}
+
+.primaryImage img {
+    width: 220px;
+    height: 220px;
+    margin-top: 10px;
+    border-radius: 20px;
+    box-shadow: -1px 0px 34px -8px rgba(0, 0, 0, 0.4);
+    object-fit: center;
+    object-position: center;
+    transition: all 0.5s ease;
+}
+
+@media (max-width: 768px) {
+    .primaryImage {
+        width: 200px;
+        height: 200px;
+    }
+
+    .primaryImage img {
+        width: 150px;
+        height: 150px;
+        margin-top: 10px;
+        border-radius: 20px;
+        box-shadow: -1px 0px 34px -8px rgba(0, 0, 0, 0.4);
+        object-fit: center;
+        object-position: center;
+        transition: all 0.5s ease;
+    }
+}
+
+.primaryText {
+    font-size: 15px;
+    width: 90%;
+    min-height: 70px;
+    line-height: 1.4;
+    transition: color 0.3s ease;
+    height: 40%;
+}
+
+.primaryText p {
+    font-size: 15px;
+    width: 100%;
+    text-wrap: balance;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+.primaryCard:hover {
+    background-color: #FFF9C4;
+    box-shadow: 0px 10px 20px rgba(255, 217, 15, 0.4);
+    transform: translateY(-5px);
+}
+
+.primaryCard:hover .primaryImage img {
+    box-shadow: 0px 10px 20px rgba(255, 219, 15, 0.6);
+    transform: rotate(10deg) scale(1.1);
+}
+
+.primaryCard:hover .primaryText h3 {
+    color: #976B0A;
+}
+
+.primaryCard:hover .primaryText p {
+    color: #976B0A;
+}

@@ -1,0 +1,15 @@
+export const getCharacters = async (dispatch) => {
+    const response = await fetch(`https://thesimpsonsapi.com/api/characters`)
+    const data = await response.json();
+    dispatch({ type: 'get_personajes', payload: data.results })
+}
+export const getCharacter = async (id) =>{
+    const response = await fetch(`https://thesimpsonsapi.com/api/characters/${id}`)
+    const data = await response.json();
+    return data
+}
+export const getLocation = async (dispatch) => {
+    const response = await fetch(`https://thesimpsonsapi.com/api/locations`)
+    const data = await response.json();
+    dispatch({ type: 'get_location', payload: data.results })
+}

@@ -1,16 +1,22 @@
-import rigoImageUrl from "../assets/img/rigo-baby.jpg";
+import { useEffect } from "react";
 import useGlobalReducer from "../hooks/useGlobalReducer.jsx";
+import { getCharacters, getLocation } from "../service/APIServices.js";
+import { CharacterCardList } from "../components/CharacterList/CharacterCardList.jsx";
+import { LocationList } from "../components/LocationList/LocationList.jsx"
+
 
 export const Home = () => {
 
-  const {store, dispatch} =useGlobalReducer()
+	const { store, dispatch } = useGlobalReducer()
+	useEffect(() => {
+		getCharacters(dispatch)
+		getLocation(dispatch)
+	}, [])
 
 	return (
-		<div className="text-center mt-5">
-			<h1>Hello Rigo!!</h1>
-			<p>
-				<img src={rigoImageUrl} />
-			</p>
-		</div>
+		<>
+			<CharacterCardList />
+			<LocationList />
+		</>
 	);
 }; 

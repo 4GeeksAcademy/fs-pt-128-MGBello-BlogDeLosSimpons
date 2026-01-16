@@ -1,5 +1,4 @@
 
-import useGlobalReducer from '../../../hooks/useGlobalReducer'
 import './LocationCard.css'
 export const LocationCard = ({ location }) => {
 
@@ -11,8 +10,8 @@ export const LocationCard = ({ location }) => {
             </div>
             <div className='locationText d-flex flex-column justify-content-center align-items-center mb-3'>
                 <h3 className='fs-4 text-center'>{location.name}</h3>
-                <p className='text-center'>{location.occupation}</p>
-               
+                <p className='text-center'>{location.town}</p>
+                <p className='text-center'>{location.use}</p>
             </div>
         </div>
 

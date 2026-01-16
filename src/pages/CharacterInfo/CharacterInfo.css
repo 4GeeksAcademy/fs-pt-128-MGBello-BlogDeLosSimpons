@@ -1,13 +1,23 @@
+body{
+    background-image: url(https://www.shutterstock.com/image-vector/sky-blue-gradient-vector-background-600nw-2651328571.jpg);
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+}
+
 .containerInfo {
     box-shadow: -1px 0px 34px -8px rgba(0, 0, 0, 0.4);
     border: none;
     transform: translateY(-5px);
+    background-color: #fff;
 }
 .containerInfo-pills{
     background-color: #f0f2f5;
-    width: 120px;
+    width: auto;
     border-radius: 50px; 
     padding: 5px 15px;
+    text-align: center;
+
 }
 .containerInfo-pills p{
     margin:0;
@@ -26,4 +36,9 @@
     object-fit: center;
     object-position: center;
     transition: all 0.5s ease;
+}
+.containerPhrases{
+    margin-top: 15px;
+    overflow-y: auto;
+    max-height: 120px;
 }

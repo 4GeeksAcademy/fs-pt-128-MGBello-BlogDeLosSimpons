@@ -4,14 +4,14 @@ import useGlobalReducer from "../hooks/useGlobalReducer";
 export const Navbar = () => {
 	const { store, dispatch } = useGlobalReducer()
 	return (
-		<nav className="navbar navbar-light bg-light">
-			<div className="container">
+		<nav className="navbar navbar-dark navbarCustom">
+			<div className="container-fluid">
 				<Link to="/">
-					<span className="navbar-brand mb-0 h1">React Boilerplate</span>
+					<img className="navbarLogo mx-4" src="https://upload.wikimedia.org/wikipedia/commons/thumb/9/98/The_Simpsons_yellow_logo.svg/1024px-The_Simpsons_yellow_logo.svg.png" alt="Logo" />
 				</Link>
-				<div className="ml-auto">
+				<div className="mx-4">
 					<div className="dropdown"> 
-						<button className="btn btn-secondary px-4 dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false">
+						<button className="btn btn-outline-dark px-4 dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false">
 							Me gusta {store.likes.length}
 						</button>
 						<ul className="dropdown-menu">

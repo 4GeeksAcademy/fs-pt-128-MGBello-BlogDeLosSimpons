@@ -8,7 +8,14 @@
     transition: all 0.4s ease;
     cursor: pointer;
 }
-
+@media (max-width: 768px) {
+    .locationCard {
+        flex-shrink: 0;
+        width: 250px;
+        height: 350px;
+        margin: 10px;
+    }
+}
 .locationCard:hover {
     box-shadow: 0px 20px 25px rgba(33, 150, 243, 0.6), 0px 0px 35px rgba(0, 229, 255, 0.9);
     background-color: #cfe5f8;
@@ -31,6 +38,24 @@
     object-position: center;
     transition: all 0.5s ease;
 }
+@media (max-width: 768px) {
+    .locationImage {
+        width: 200px;
+        height: 200px;
+    }
+
+    .locationImage img {
+        width: 150px;
+        height: 150px;
+        margin-top: 10px;
+        border-radius: 20px;
+        box-shadow: -1px 0px 34px -8px rgba(0, 0, 0, 0.4);
+        object-fit: center;
+        object-position: center;
+        transition: all 0.5s ease;
+    }
+}
+
 
 .locationText {
     font-size: 15px;

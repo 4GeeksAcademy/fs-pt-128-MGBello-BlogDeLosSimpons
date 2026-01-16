@@ -4,7 +4,7 @@
     height: 500px;
     margin: 10px;
     border: none;
-    background-color: #FFF;
+    background-color: #fff;
     transition: all 0.4s ease;
     cursor: pointer;
 }
@@ -27,6 +27,7 @@
 .primaryImage {
     width: 250px;
     height: 50%;
+    
 }
 
 .primaryImage img {
@@ -38,6 +39,7 @@
     object-fit: center;
     object-position: center;
     transition: all 0.5s ease;
+    background-color: #fff;
 }
 
 @media (max-width: 768px) {

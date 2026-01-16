@@ -1,6 +1,10 @@
 * {
     font-family: "Fredoka", sans-serif;
 }
+.navbarLogo{
+    width: 120px;
+    height: 60px;
+}
 
 .characterContainer {
     display: flex;
@@ -22,4 +26,14 @@
         height: 400px;
        
     }
+}
+.footer{
+    display:flex; 
+    align-items:center;
+    justify-content: center;
+}
+.footer a{
+    text-decoration: none;
+    color:#fdf078;
+    font-size: 20px;
 }

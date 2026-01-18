@@ -1,7 +1,7 @@
 export const getCharacters = async (dispatch) => {
     const response = await fetch(`https://thesimpsonsapi.com/api/characters`)
     const data = await response.json();
-    dispatch({ type: 'get_personajes', payload: data.results })
+    dispatch({ type: 'get_characters', payload: data.results })
 }
 export const getCharacter = async (id) =>{
     const response = await fetch(`https://thesimpsonsapi.com/api/characters/${id}`)

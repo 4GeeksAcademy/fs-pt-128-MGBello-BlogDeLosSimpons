@@ -14,7 +14,7 @@ export const initialStore = () => {
       }
     ],
     characters: [],
-    locations:[],
+    locations: [],
     likes: []
   }
 }
@@ -29,24 +29,23 @@ export default function storeReducer(store, action = {}) {
         ...store,
         todos: store.todos.map((todo) => (todo.id === id ? { ...todo, background: color } : todo))
       };
-    case 'get_personajes':
-      return{
+    case 'get_characters':
+      return {
         ...store,
-        characters:action.payload
+        characters: action.payload
       }
     case 'get_location':
       return {
         ...store,
         locations: action.payload
       };
-    case 'set_likes': 
-      const isLike = store.likes.includes(action.payload);
-      const likesList = isLike ? 
-      store.likes.filter(like => like.id !== action.payload.id) : 
-      [...store.likes, action.payload]
+    case 'set_likes':
+      const isLike = store.likes.some(item => item.id === action.payload.id);
       return {
         ...store,
-        likes: likesList
+        likes: isLike ?
+          store.likes.filter(like => like.id !== action.payload.id) :
+          [...store.likes, action.payload]
       }
     default:
       throw Error('Unknown action.');

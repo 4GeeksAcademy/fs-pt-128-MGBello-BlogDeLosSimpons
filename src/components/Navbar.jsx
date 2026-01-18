@@ -11,17 +11,20 @@ export const Navbar = () => {
 				</Link>
 				<div className="mx-4">
 					<div className="dropdown"> 
-						<button className="btn btn-outline-dark px-4 dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false">
+						<button className={`btn ${store.likes.length > 0 ? 'btn-outline-danger': 'btn-outline-dark'} px-4 dropdown-toggle`} type="button" data-bs-toggle="dropdown" aria-expanded="false">
 							Me gusta {store.likes.length}
 						</button>
 						<ul className="dropdown-menu">
 							{
+							store.likes.length > 0 ? (
 								store.likes.map(characters => (
 									
 										<li key={characters.id} className='text-center'>
 											<p>{characters.name}</p>
 										</li>
 								))
+							):(<p className="text-center">No hay likes</p>)
+								
 							}
 						</ul>
 					</div>

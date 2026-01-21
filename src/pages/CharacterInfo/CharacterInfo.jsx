@@ -1,4 +1,4 @@
-import { useParams } from "react-router-dom"
+import { useParams, Link } from "react-router-dom"
 import { useEffect, useState } from "react"
 import { getCharacter } from "../../service/APIServices"
 import { LocationList } from "../../components/LocationList/LocationList.jsx"
@@ -16,29 +16,34 @@ export const CharacterInfo = () => {
 
     useEffect(() => {
         getCharacterData()
-    }, [])
+        window.scrollTo(0, 0)
+    }, [id])
 
     return (
         <>
             <div className="container mx-auto mt-5 p-3 rounded containerInfo mx-auto">
+                <Link to={'/'}>
+                    <button className="btn"><i className="fa-solid fa-arrow-left-long"></i></button>
+                </Link>
 
                 <div className="row g-0 align-items-center">
                     <div className="col-md-6 col-12 containerImg d-flex flex-column align-items-center justify-content-center mx-auto">
                         <h1 className="text-center">{character.name}</h1>
                         <img className="img-fluid" src={`https://cdn.thesimpsonsapi.com/500${character.portrait_path}`} alt={character.name} />
                     </div>
-                    <div className="col-md-6 col-12 d-flex flex-column align-items-center align-items-md-start mx-auto p-4"> <div className="row d-flex justify-content-md-center w-100">
-                        <div className="col-6 col-md-4 d-flex justify-content-center align-items-center">
-                            <div className="containerInfo-pills">
-                                <p>{character.age ? character.age : 'Unknown'} years old</p>
+                    <div className="col-md-6 col-12 d-flex flex-column align-items-center align-items-md-start mx-auto p-4">
+                        <div className="row d-flex justify-content-md-center w-100">
+                            <div className="col-6 col-md-4 d-flex justify-content-center align-items-center">
+                                <div className="containerInfo-pills">
+                                    <p>{character.age ? character.age : 'Unknown'} years old</p>
+                                </div>
+                            </div>
+                            <div className="col-6 col-md-4  d-flex justify-content-center align-items-center">
+                                <div className="containerInfo-pills">
+                                    <p>{character.birthdate ? character.birthdate : 'Unknown'}</p>
+                                </div>
                             </div>
                         </div>
-                        <div className="col-6 col-md-4  d-flex justify-content-center align-items-center">
-                            <div className="containerInfo-pills">
-                                <p>{character.birthdate ? character.birthdate : 'Unknown'}</p>
-                            </div>
-                        </div>
-                    </div>
                         <p className="w-100 text-center mt-5">{character.occupation}</p>
                         <p className="w-100">{character.description}</p>
                     </div>

@@ -1,14 +1,14 @@
 import { useEffect } from "react"
 import useGlobalReducer from "../../hooks/useGlobalReducer"
 import { LocationCard } from "./LocationCard/LocationCard"
-import { getLocation } from "../../service/APIServices"
+import { getLocations } from "../../service/APIServices"
 
 
 export const LocationList = () =>{
     const {store, dispatch} = useGlobalReducer()
     
     useEffect(()=>{
-        getLocation(dispatch)
+        getLocations(dispatch)
     },[])
     
     return(

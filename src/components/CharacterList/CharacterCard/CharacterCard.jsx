@@ -17,7 +17,7 @@ export const CharacterCard = ({ character }) => {
             <div className='primaryImage d-flex justify-content-center mt-2 mb-2'>
                 <img src={`https://cdn.thesimpsonsapi.com/200${character.portrait_path}`} alt={character.name} />
             </div>
-            <div className='primaryText d-flex flex-column justify-content-center align-items-center mb-3'>
+            <div className='primaryText d-flex flex-column justify-content-center align-items-center mb-3 mt-'>
                 <h3 className='fs-4 text-center'>{character.name}</h3>
                 <p className='text-center'>{character.occupation}</p>
                 <button className='btn' onClick={handlerClick}><i className={`${isLike ? 'fa-solid text-danger' : 'fa-regular'} fa-heart fs-4 `}></i></button>

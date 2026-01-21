@@ -15,7 +15,8 @@ export const initialStore = () => {
     ],
     characters: [],
     locations: [],
-    likes: []
+    likes: [],
+    likes_locations: []
   }
 }
 
@@ -34,7 +35,7 @@ export default function storeReducer(store, action = {}) {
         ...store,
         characters: action.payload
       }
-    case 'get_location':
+    case 'get_locations':
       return {
         ...store,
         locations: action.payload
@@ -43,9 +44,25 @@ export default function storeReducer(store, action = {}) {
       const isLike = store.likes.some(item => item.id === action.payload.id);
       return {
         ...store,
-        likes: isLike ?
-          store.likes.filter(like => like.id !== action.payload.id) :
-          [...store.likes, action.payload]
+        likes: !isLike ? [...store.likes, action.payload] : store.likes
+      }
+    case 'set_delete':
+
+      return {
+        ...store,
+        likes: store.likes.filter(like => like.id !== action.payload)
+      }
+        case 'set_likes_locations':
+      const isLikeLocation = store.likes_locations.some(item => item.id === action.payload.id);
+      return {
+        ...store,
+        likes_locations: !isLikeLocation ? [...store.likes_locations, action.payload] : store.likes_locations
+      }
+    case 'set_delete_locations':
+
+      return {
+        ...store,
+        likes_locations: store.likes_locations.filter(like => like.id !== action.payload)
       }
     default:
       throw Error('Unknown action.');

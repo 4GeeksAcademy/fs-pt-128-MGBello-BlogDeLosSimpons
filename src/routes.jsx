@@ -8,6 +8,7 @@ import {
 import { Layout } from "./pages/Layout";
 import { Home } from "./pages/Home";
 import { CharacterInfo } from "./pages/CharacterInfo/CharacterInfo.jsx";
+import { LocationInfo } from "./pages/LocationsInfo/LocationInfo.jsx";
 
 export const router = createBrowserRouter(
     createRoutesFromElements(
@@ -23,6 +24,7 @@ export const router = createBrowserRouter(
         {/* Nested Routes: Defines sub-routes within the BaseHome component. */}
         <Route path= "/" element={<Home />} />
         <Route path= "/character-info/:id" element={<CharacterInfo />} />
+        <Route path= "/location-info/:id" element={<LocationInfo />} />
       </Route>
     )
 );
